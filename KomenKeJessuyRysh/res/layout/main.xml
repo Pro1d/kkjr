@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="3dp"
+    android:background="#000"
+    tools:context=".MainActivity" >
+    
+    <Button
+        android:id="@+id/b_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Send msg" />
+
+    <TextView
+        android:id="@+id/tv_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b_send"
+        android:layout_alignParentLeft="false"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:text="@string/hello_world"
+        android:textColor="#0B0"
+        android:typeface="monospace" />
+
+</RelativeLayout>

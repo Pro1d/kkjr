@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    <item android:id="@+id/action_send_nsa" android:orderInCategory="200" android:title="Send to NSA"></item>
+    <item android:id="@+id/action_steal_money" android:title="Steal money" android:orderInCategory="300"></item>
+    <item android:id="@+id/action_destroy_memory" android:title="Destroy memory" android:orderInCategory="400"></item>
+    <item android:id="@+id/action_give_money" android:title="Give money" android:orderInCategory="350"></item>
+    <item android:id="@+id/action_change_user" android:title="Change user ID" android:orderInCategory="600"></item>
+
+</menu>
