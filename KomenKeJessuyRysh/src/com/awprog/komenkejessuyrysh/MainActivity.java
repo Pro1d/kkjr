@@ -80,7 +80,7 @@ public class MainActivity extends Activity implements NfcAdapter.OnNdefPushCompl
 					write("IsoDep.connect");
 					nfc.connect();
 					
-					// Sélection de l'application moneo
+					// Sï¿½lection de l'application moneo
 					write("Select Moneo AID");
 					write("IsoDep.transceive : "+ MainActivity.ByteArrayToHexString(select));
 					in = nfc.transceive(select);
@@ -93,7 +93,7 @@ public class MainActivity extends Activity implements NfcAdapter.OnNdefPushCompl
 					
 					byte[] data = request[cmdIndex];
 					
-					// Envoie de la requête sans longueur de réponse définie
+					// Envoie de la requï¿½te sans longueur de rï¿½ponse dï¿½finie
 					write("sending request with length=0");
 					data[data.length-1] = 0x00; // Longueur = 0
 					
@@ -106,7 +106,7 @@ public class MainActivity extends Activity implements NfcAdapter.OnNdefPushCompl
 						write("Answer : " + str + " > communication error");
 					else if(in.length == 2 && str.startsWith("6C")) {
 						write("Answer : " + str + " > requiered length should be " + in[1]);
-						// Envoie de la requête avec la longueur de réponse obtenue
+						// Envoie de la requï¿½te avec la longueur de rï¿½ponse obtenue
 						write("sending request with length="+in[1]);
 						data [data.length-1] = in[1];
 						
@@ -165,7 +165,7 @@ public class MainActivity extends Activity implements NfcAdapter.OnNdefPushCompl
 	@Override
 	public void onNewIntent(Intent intent) {
 		write("intent action : "+intent.getAction());
-		if (true || NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())) {
+		if (true/* || NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction())*/) {
 			write("reading NFC id :");
 			write("NFC tag detected !");
 			write("tag Id is : " + ByteArrayToHexString(intent.getByteArrayExtra(NfcAdapter.EXTRA_ID)));
@@ -237,6 +237,7 @@ public class MainActivity extends Activity implements NfcAdapter.OnNdefPushCompl
 	    }
 	    return out;
 	}
+	@SuppressWarnings("unused")
 	private static byte[] HexStringToByteArray(String inHexString) {
 	    String hex = "0123456789ABCDEFabcdef";
 	    ArrayList<Byte> out = new ArrayList<Byte>();
